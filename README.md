@@ -42,4 +42,22 @@ python get_asn_prefixes.py AS45025,42430,43554,24881,47598 --history
 python get_asn_prefixes.py \
     --token YOUR_IPINFO_TOKEN \
     AS45025,42430 --history --sample 0 --debug
+```
+## Command-line options
 
+| Flag | Purpose |
+|------|---------|
+| `--history` | Include historic prefixes (`lod=2`) in addition to live |
+| `--csv FILE` / `--json FILE` | Write results instead of printing |
+| `--token TOKEN` | Add IPinfo as third-tier data source |
+| `--deep-successor` / `--sample N` | Enable and tune successor hunting (`0` = all prefixes) |
+| `--debug` | Show every prefix → origin decision |
+| `--no-progress` | Disable `tqdm` bars for cron/CI |
+
+### API credits
+
+* **RIPE NCC RIPEstat** – routing & registry data  
+* **BGPView** – BGP/WHOIS aggregation  
+* **IPinfo** – ASN & prefix metadata (optional token)
+
+_All API usage stays within free-tier limits._
